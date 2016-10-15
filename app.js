@@ -12,10 +12,12 @@ $(document).ready(function() {
         var results = data.query.search; // [obj, obj, obj...]
         results.forEach(function(result) {
           var wikilink = "<a href='https://en.wikipedia.org/wiki/'+result.title></a>";
-          var title = "<div class='wikititle'>"+result.title+"</div>";
+          // var title = "<div class='wikititle'>"+result.title+"</div>";
           var snippet = "<div class='wikicontent'>"+result.snippet+"</div>";
           var contenturl = "https://en.wikipedia.org/wiki/"+result.title.split(' ').join('_');
           $('.wikibox').append("<br>"+"<a href="+contenturl+">"+result.title+"</a>"+snippet);
+          // $('.wikititle').append("<br>"+"<a href="+contenturl+">"+result.title+"</a>");
+          // $('.wikicontent').append("<div>"+result.snippet+"</div>");
         })
       },
       error: function() {
