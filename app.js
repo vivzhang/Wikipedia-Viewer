@@ -14,6 +14,8 @@ $(document).ready(function() {
           var wikilink = "<a href='https://en.wikipedia.org/wiki/'+result.title></a>";
           var title = "<div class='wikititle'>"+result.title+"</div>";
           var snippet = "<div class='wikicontent'>"+result.snippet+"</div>";
+          var contenturl = "https://en.wikipedia.org/wiki/"+result.title.split(' ').join('_');
+          $('.wikibox').append("<br>"+"<a href="+contenturl+">"+result.title+"</a>"+snippet);
         })
       },
       error: function() {
